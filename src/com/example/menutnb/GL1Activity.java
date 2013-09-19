@@ -15,10 +15,12 @@ import android.view.Window;
 import android.view.WindowManager;
 
 
+
 public class GL1Activity extends Activity implements OnTouchListener {
 	
 	GLSurfaceView ourSurface;
 	float x,y;
+	public float value;
 	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -30,6 +32,10 @@ public class GL1Activity extends Activity implements OnTouchListener {
 		ourSurface.setOnTouchListener(this);
 		x=0;
 		y=0;
+		
+		Bundle extras = getIntent().getExtras();
+		value = extras.getFloat("val");
+		
 		ourSurface.setRenderer(new GL1Renderer()); //links to GL1Renderer
 		setContentView(ourSurface);
 		
@@ -83,7 +89,7 @@ public class GL1Activity extends Activity implements OnTouchListener {
 				
 			gl.glTranslatef(0, 0, zoomz);
 				if (zoomz >-10) {
-				zoomz-=.002*framecount;	
+				zoomz-=value*framecount;	
 				framecount +=1;
 					}			
 				if (zoomz<-10 && x>0 && y>0){

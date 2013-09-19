@@ -12,19 +12,21 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/your_total_is_0"
-        android:id="@+id/tvdisplay"/>
-
-    <Button
-        android:layout_width="250dp"
+        android:text="@string/formula_display"
+        android:id="@+id/formula_display"/>
+    
+    <EditText 
+        android:id="@+id/edit_text"
+        android:layout_width="125dp"
         android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:text="@string/GO_Square"
-        android:id="@+id/bGOsquare" />
-    <Button
-        android:layout_width="250dp"
+        android:inputType="text"
+        android:imeOptions="actionDone"
+        android:singleLine="true"/> 
+    
+    <Button android:id="@+id/button_send"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:text="@string/GO_Circle"
-        android:id="@+id/bGOcircle" />
+        android:text="@string/button_send"
+        android:onClick="sendMessage" />
+    
 </LinearLayout>

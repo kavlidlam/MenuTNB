@@ -7,6 +7,7 @@ import android.content.Intent;
 import android.view.View;
 import android.view.Menu;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.TextView;
 
 
@@ -14,36 +15,51 @@ import android.widget.TextView;
 public class MainActivity extends Activity {
 	
 	int multiplier;
-	Button circle, square;
+	Button circle, square, send, sendcst;
 	TextView display;
+	EditText textval;
 	
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_main);
-		multiplier = 0;
-		circle = (Button) findViewById(R.id.bGOcircle);
-		square = (Button) findViewById(R.id.bGOsquare);
-		display = (TextView) findViewById(R.id.tvdisplay);
-		square.setOnClickListener(new View.OnClickListener() {
-			
+
+		textval = (EditText) findViewById(R.id.edit_text);
+		send = (Button) findViewById(R.id.button_send);
+		
+		
+		send.setOnClickListener(new View.OnClickListener() {
+		    
 			@Override
 			public void onClick(View v) {
-				// TODO Auto-generated method stub
-				multiplier++;
-				display.setText("your_total_is_0" + multiplier);
-			}
-		});
-		circle.setOnClickListener(new View.OnClickListener() {
-			
-			@Override
-			public void onClick(View v) {
-				// TODO Auto-generated method stub
+		        // Do something in response to button click
+				
+				String str_val = textval.getText().toString();
+				float val = Float.valueOf(str_val);
+				
 				Intent intent = new Intent(v.getContext(), GL1Activity.class);
-				startActivityForResult (intent, 0);
-			}
+				intent.putExtra("val", val);
+				startActivityForResult(intent, 0);
+		    }
 		});
+		
+		send.setOnClickListener(new View.OnClickListener() {
+		    
+			@Override
+			public void onClick(View v) {
+		        // Do something in response to button click
+				
+				String str_val = textval.getText().toString();
+				float val = Float.valueOf(str_val);
+				
+				Intent intent = new Intent(v.getContext(), GL1Activity.class);
+				intent.putExtra("val", val);
+				startActivityForResult(intent, 0);
+		    }
+		});
+		
+		
 		
 	}
 

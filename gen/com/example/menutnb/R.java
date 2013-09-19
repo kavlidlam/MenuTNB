@@ -25,9 +25,9 @@ public final class R {
     }
     public static final class id {
         public static final int action_settings=0x7f080003;
-        public static final int bGOcircle=0x7f080002;
-        public static final int bGOsquare=0x7f080001;
-        public static final int tvdisplay=0x7f080000;
+        public static final int button_send=0x7f080002;
+        public static final int edit_text=0x7f080001;
+        public static final int formula_display=0x7f080000;
     }
     public static final class layout {
         public static final int activity_main=0x7f030000;
@@ -37,11 +37,10 @@ public final class R {
     }
     public static final class string {
         public static final int GL1Activity=0x7f050001;
-        public static final int GO_Circle=0x7f050005;
-        public static final int GO_Square=0x7f050004;
         public static final int action_settings=0x7f050002;
         public static final int app_name=0x7f050000;
-        public static final int your_total_is_0=0x7f050003;
+        public static final int button_send=0x7f050003;
+        public static final int formula_display=0x7f050004;
     }
     public static final class style {
         /** 
